@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
+import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -38,6 +39,8 @@ export default function Home() {
             </a>
           </div>
         </div>
+
+        <Link href="/timestamp">时间戳</Link>
 
         <div className={styles.center}>
           <Image className={styles.logo} src="/next.svg" alt="Next.js Logo" width={180} height={37} priority />
