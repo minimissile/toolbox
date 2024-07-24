@@ -1,6 +1,7 @@
 import { NextSeo } from 'next-seo'
 import { NextPage } from 'next'
 import { Button } from '@chakra-ui/react'
+import Header from '@/components/Header'
 
 /**
  * 时间戳工具
@@ -9,6 +10,7 @@ import { Button } from '@chakra-ui/react'
 const Timestamp: NextPage = () => {
   return (
     <>
+      <Header />
       <PageSeo />
       <p>时间戳工具</p>
       <Button>时间戳工具修改主题2</Button>
