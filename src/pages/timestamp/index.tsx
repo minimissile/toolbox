@@ -11,7 +11,7 @@ const Timestamp: NextPage = () => {
     <>
       <PageSeo />
       <p>时间戳工具</p>
-      <Button>时间戳工具修改主题</Button>
+      <Button>时间戳工具修改主题1</Button>
     </>
   )
 }

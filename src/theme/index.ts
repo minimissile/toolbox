@@ -11,7 +11,7 @@ export const theme = extendTheme({
     body: 'var(--font-rubik)',
   },
   config: {
-    initialColorMode: 'light',
+    initialColorMode: 'dark',
     useSystemColorMode: false,
   },
 })
