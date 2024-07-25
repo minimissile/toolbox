@@ -14,7 +14,16 @@ export default function App({ Component, pageProps }: AppProps) {
           }
         `}
       </style>
-      <ChakraBaseProvider theme={theme}>
+      <ChakraBaseProvider
+        theme={theme}
+        toastOptions={{
+          defaultOptions: {
+            position: 'top',
+            duration: 2000,
+            isClosable: true,
+          },
+        }}
+      >
         <Component {...pageProps} />
       </ChakraBaseProvider>
     </>
