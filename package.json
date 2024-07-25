@@ -21,14 +21,21 @@
     "next-seo": "^6.5.0",
     "next-sitemap": "^4.2.3",
     "react": "^18",
+    "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18",
-    "react-helmet-async": "^2.0.5"
+    "react-helmet-async": "^2.0.5",
+    "react-live": "^4.1.7",
+    "react-syntax-highlighter": "^15.5.0",
+    "uuid": "^10.0.0"
   },
   "devDependencies": {
     "@types/luxon": "^3.4.2",
     "@types/node": "^20",
     "@types/react": "^18",
+    "@types/react-copy-to-clipboard": "^5.0.7",
     "@types/react-dom": "^18",
+    "@types/react-syntax-highlighter": "^15.5.13",
+    "@types/uuid": "^10.0.0",
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
     "eslint-config-prettier": "^9.1.0",

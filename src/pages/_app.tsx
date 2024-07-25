@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app'
 import { ChakraBaseProvider } from '@chakra-ui/react'
 import { fonts } from '@/lib/fonts'
 import { theme } from '@/theme'
+import Layout from './_layout'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -24,7 +25,9 @@ export default function App({ Component, pageProps }: AppProps) {
           },
         }}
       >
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </ChakraBaseProvider>
     </>
   )

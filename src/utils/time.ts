@@ -17,19 +17,31 @@ function timeZoneOffset(timeZone: string): string {
 
 /**
  * 将格式化的时间字符串和时区转换为时间戳
- * @param formattedTime 格式化的时间字符串（例如 '2024-07-25 11:16:33'）
+ * @param formattedTime 格式化的时间字符串（例如 '07/25/2024, 01:27:19 PM'）
  * @param timeZone 时区（例如 'Asia/Shanghai'）
  * @returns 时间戳（以毫秒为单位）
  */
 export function parseToTimestamp(formattedTime: string, timeZone: string): number {
-  // 解析时间字符串为 DateTime 对象
-  const [datePart, timePart] = formattedTime.split(' ')
+  // 解析日期时间字符串，考虑到不同的格式
+  let dateTime: DateTime
 
-  // 构建完整的日期时间字符串
-  const dateTimeStr = `${datePart}T${timePart}`
+  // 处理不同格式的时间字符串
+  if (formattedTime.includes(',')) {
+    // 'MM/dd/yyyy, hh:mm:ss a' 格式
+    const [datePart, timePart] = formattedTime.split(', ')
+    const [month, day, year] = datePart.split('/')
+    const time12Hour = timePart.replace(/(AM|PM)/i, '').trim()
+    const period = timePart.match(/(AM|PM)/i)?.[0] || 'AM'
 
-  // 使用 luxon 解析日期时间字符串，并指定时区
-  const dateTime = DateTime.fromISO(dateTimeStr, { zone: timeZone })
+    // 构建 ISO 格式的日期时间字符串
+    const isoDateTimeStr = `${year}-${month}-${day}T${time12Hour} ${period}`
+    dateTime = DateTime.fromFormat(isoDateTimeStr, "yyyy-MM-dd'T'hh:mm:ss a", { zone: timeZone })
+  } else {
+    // 处理 'YYYY-MM-DD HH:mm:ss' 格式
+    const [datePart, timePart] = formattedTime.split(' ')
+    const isoDateTimeStr = `${datePart}T${timePart}`
+    dateTime = DateTime.fromISO(isoDateTimeStr, { zone: timeZone })
+  }
 
   if (!dateTime.isValid) {
     throw new Error('Invalid date/time format or timezone')
