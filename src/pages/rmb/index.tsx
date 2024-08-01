@@ -46,7 +46,7 @@ const Rmb = () => {
           </NumberInput>
           <Button px={'25px'}>转为人民币大写</Button>
           <Button px={'25px'} variant="outline">
-            转为人民币大写
+            复制
           </Button>
         </Flex>
 

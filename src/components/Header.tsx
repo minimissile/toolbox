@@ -7,7 +7,7 @@ const Header = () => {
       <Container as={Flex} justifyContent={'space-between'} alignItems={'center'}>
         <Link href={'/'}>
           <Flex align={'center'}>
-            <Image w={'40px'} mr={'10px'} src={'/logo.png'}></Image>
+            <Image w={'40px'} mr={'10px'} src={'/logo.png'} alt={'logo'}></Image>
             <Heading fontSize={'22px'}>Geek Tools</Heading>
           </Flex>
         </Link>

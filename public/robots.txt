@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://toolbox-sigma-nine.vercel.app
+
+# Sitemaps
+Sitemap: https://toolbox-sigma-nine.vercel.app/sitemap.xml
