@@ -12,12 +12,14 @@ export default function Home() {
       </Head>
 
       <Container h={'100%'}>
-        <Flex gap={'20px'} pt={'20px'}>
+        <Flex gap={'20px'} pt={'20px'} flexWrap={'wrap'}>
           <Card title={'时间戳转换工具'} link={'/timestamp'} />
           <Card title={'UUID生成器'} link={'/uuid'} />
           <Card title={'以太坊靓号生成器'} link={'/rareeth'} />
           <Card title={'摩斯密码转换器'} link={'/morse'} />
           <Card title={'人民币大写转换器'} link={'/rmb'} />
+          <Card title={'html特殊字符表'} link={'/specialCharacters'} />
+          <Card title={'http状态码'} link={'/httpStatusCode'} />
         </Flex>
       </Container>
     </>
@@ -33,19 +35,19 @@ interface CardProps extends BoxProps {
 
 const Card: React.FC<CardProps> = ({ title, link, ...other }) => {
   return (
-    <Box
+    <Flex
       as={Link}
       href={link}
       boxShadow={'rgba(0, 0, 0, 0.1) -10px -10px 10px 7px'}
       _hover={{
         boxShadow: 'rgba(0, 0, 0, 0.1) 0px 0px 0px 0px',
       }}
-      w={'20%'}
+      w={'23%'}
       h={'100px'}
       p={6}
       {...other}
     >
       <Text fontWeight={600}>{title}</Text>
-    </Box>
+    </Flex>
   )
 }
